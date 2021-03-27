@@ -22,15 +22,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         colorView.layer.cornerRadius = colorView.frame.height / 8
         
         labelRed.text = "Red: 0.50"
         labelGreen.text = "Green: 0.50"
         labelBlue.text = "Blue: 0.50"
     }
-
-
+    
+    
     @IBAction func sliderRedSlide() {
         labelRed.text = "Red: \(String (format: "%.2f", sliderRed.value))"
         let backgoundColor = UIColor(
