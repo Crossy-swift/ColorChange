@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet var labelGreen: UILabel!
     @IBOutlet var labelBlue: UILabel!
     
-    
     @IBOutlet var sliderRed: UISlider!
     @IBOutlet var sliderGreen: UISlider!
     @IBOutlet var sliderBlue: UISlider!
@@ -25,43 +24,49 @@ class ViewController: UIViewController {
         
         colorView.layer.cornerRadius = colorView.frame.height / 8
         
-        labelRed.text = "Red: 0.50"
-        labelGreen.text = "Green: 0.50"
-        labelBlue.text = "Blue: 0.50"
-    }
-    
-    
-    @IBAction func sliderRedSlide() {
-        labelRed.text = "Red: \(String (format: "%.2f", sliderRed.value))"
-        let backgoundColor = UIColor(
+        labelRed.text = "\(String (format: "%.2f", sliderRed.value))"
+        labelGreen.text = "\(String (format: "%.2f", sliderGreen.value))"
+        labelBlue.text = "\(String (format: "%.2f", sliderBlue.value))"
+        
+        sliderRed.minimumTrackTintColor = .red
+        sliderGreen.minimumTrackTintColor = .green
+        
+        colorView.backgroundColor = UIColor(
             red: CGFloat(sliderRed.value),
             green: CGFloat(sliderGreen.value),
             blue: CGFloat(sliderBlue.value),
             alpha: 1
         )
-        self.colorView.backgroundColor = backgoundColor
+    }
+    
+    @IBAction func sliderRedSlide() {
+        labelRed.text = "\(String (format: "%.2f", sliderRed.value))"
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(sliderRed.value),
+            green: CGFloat(sliderGreen.value),
+            blue: CGFloat(sliderBlue.value),
+            alpha: 1
+        )
     }
     
     @IBAction func sliderGreenSlide() {
-        labelGreen.text = "Green: \(String (format: "%.2f", sliderGreen.value))"
-        let backgoundColor = UIColor(
+        labelGreen.text = "\(String (format: "%.2f", sliderGreen.value))"
+        colorView.backgroundColor = UIColor(
             red: CGFloat(sliderRed.value),
             green: CGFloat(sliderGreen.value),
             blue: CGFloat(sliderBlue.value),
             alpha: 1
         )
-        self.colorView.backgroundColor = backgoundColor
     }
     
     @IBAction func sliderBlueSlide() {
-        labelBlue.text = "Blue: \(String (format: "%.2f", sliderBlue.value))"
-        let backgoundColor = UIColor(
+        labelBlue.text = "\(String (format: "%.2f", sliderBlue.value))"
+        colorView.backgroundColor = UIColor(
             red: CGFloat(sliderRed.value),
             green: CGFloat(sliderGreen.value),
             blue: CGFloat(sliderBlue.value),
             alpha: 1
         )
-        self.colorView.backgroundColor = backgoundColor
     }
     
 }
