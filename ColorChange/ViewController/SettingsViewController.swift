@@ -41,13 +41,14 @@ class SettingsViewController: UIViewController {
     
     @IBAction func rgbSlide(_ sender: UISlider) {
         
-        setColor()
-        
         switch sender {
         case sliderRed: setValue(for: labelRed)
         case sliderGreen: setValue(for: labelGreen)
         default: setValue(for: labelBlue)
         }
+        
+        setColor()
+        
     }
     
     
@@ -84,7 +85,7 @@ class SettingsViewController: UIViewController {
     
     private func changeSliderSpot() {
         let viewColor = CIColor(color: frontColor)
-
+        
         sliderRed.value = Float(viewColor.red)
         sliderGreen.value = Float(viewColor.green)
         sliderBlue.value = Float(viewColor.blue)
