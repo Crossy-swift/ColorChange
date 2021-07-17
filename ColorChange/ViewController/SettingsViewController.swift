@@ -48,9 +48,7 @@ class SettingsViewController: UIViewController {
         }
         
         setColor()
-        
     }
-    
     
     @IBAction func doneButtonPresses() {
         delegate?.setViewColor(color: colorView.backgroundColor ?? .black)
